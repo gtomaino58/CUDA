@@ -158,6 +158,7 @@ is_tsr_1_a_tensor = (isinstance(tsr_1, torch.Tensor))
 print("tsr_1 is a tensor: ", is_tsr_1_a_tensor)
 is_tsr_2_a_tensor = (isinstance(tsr_2, torch.Tensor))
 print("tsr_2 is a tensor: ", is_tsr_2_a_tensor)
+print()
 
 # Definimos una función para calcular el producto punto de los tensores
 def dot_product(tensor1, tensor2):
