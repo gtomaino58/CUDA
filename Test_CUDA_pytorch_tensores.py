@@ -95,6 +95,7 @@ if __name__ == "__main__":
         print("Torch está instalado y la GPU es visible y puedo obtener información de ella.")
     else:
         print("Torch no está instalado o la GPU no es visible o no puedo obtener información de ella.")
+print()
 
 # Comparamos calculo con CPU y GPU para la suma de los elementos de un array
 # Generamos un array aleatorio
