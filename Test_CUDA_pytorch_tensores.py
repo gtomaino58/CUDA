@@ -1,6 +1,7 @@
-# Vamos a comprobar si hay GPU
-# Importamos la librería torch
+# Importamos las librerías torch, numpy y time
 import torch
+import numpy as np
+import time
 
 # Comprobamos si hay GPU
 def check_gpu():
@@ -9,7 +10,7 @@ def check_gpu():
     else:
         return False
     
-# Comprobamos si hay GPU
+# Comprobamos si hay GPU de otra forma
 if __name__ == "__main__":
     if check_gpu():
         print("Hay GPU disponible.")
@@ -24,14 +25,14 @@ def check_torch():
     except ImportError:
         return False
     
-# Comprobamos si hay GPU y Torch
+# Comprobamos si hay GPU y Torch de otra forma
 if __name__ == "__main__":
     if check_torch():
         print("Torch está instalado.")
     else:
         print("Torch no está instalado.")
 
-# Vamos a comprobar si veo la GPU
+# Vamos a comprobar si veo la GPU de otra forma
 def check_gpu_visible():
     if torch.cuda.is_available():
         gpu_count = torch.cuda.device_count()
@@ -42,14 +43,14 @@ def check_gpu_visible():
     else:
         return False
     
-# Comprobamos si hay GPU visible
+# Comprobamos si hay GPU visible de otra forma
 if __name__ == "__main__":
     if check_gpu_visible():
         print("La GPU es visible.")
     else:
         print("La GPU no es visible.")
 
-# Comprobamos si hay GPU visible y Torch
+# Comprobamos si hay GPU visible y Torch de otra forma
 def check_torch_visible():
     try:
         import torch
@@ -64,7 +65,7 @@ def check_torch_visible():
     except ImportError:
         return False
     
-# Comprobamos si hay GPU visible y Torch
+# Comprobamos si hay GPU visible y Torch de otra forma
 if __name__ == "__main__":
     if check_torch_visible():
         print("Torch está instalado y la GPU es visible.")
@@ -72,7 +73,6 @@ if __name__ == "__main__":
         print("Torch no está instalado o la GPU no es visible.")
       
 # Mas info sobre la GPU
-
 def check_torch_gpu_info():
     try:
         import torch
@@ -96,10 +96,7 @@ if __name__ == "__main__":
     else:
         print("Torch no está instalado o la GPU no es visible o no puedo obtener información de ella.")
 
-        # Comparamos calculo con CPU y GPU para la suma de los elementos de un array
-import numpy as np
-import time
-
+# Comparamos calculo con CPU y GPU para la suma de los elementos de un array
 # Generamos un array aleatorio
 array_size = 1_000_000_000
 array = np.random.rand(array_size)
@@ -133,7 +130,7 @@ else:
 # Comprobamos calculo con CPU y GPU con tensores
 
 # Generamos un tensor aleatorio de tamaño muy grande
-array_size = 100
+array_size = 200
 array_1 = np.random.rand(array_size, array_size, array_size)
 # Imprimimos el tamaño de el shape del array
 print(array_1.shape)
@@ -145,7 +142,7 @@ print(tsr_1.shape)
 print()
 
 # Generamos otro tensor aleatorio de tamaño muy grande
-array_size = 100
+array_size = 200
 array_2 = np.random.rand(array_size, array_size, array_size)
 # Imprimimos el tamaño de el shape del array
 print(array_2.shape)
