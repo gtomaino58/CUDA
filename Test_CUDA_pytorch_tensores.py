@@ -127,6 +127,7 @@ if time_gpu > 0:
     print(f"Ratio de velocidad GPU/CPU: {ratio:.4f}")
 else:
     print("No se puede calcular el ratio de velocidad, el tiempo de GPU es 0.")
+print()
     
 # Comprobamos calculo con CPU y GPU con tensores
 
