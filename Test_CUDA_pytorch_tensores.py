@@ -101,7 +101,7 @@ import numpy as np
 import time
 
 # Generamos un array aleatorio
-array_size = 1000000000
+array_size = 1_000_000_000
 array = np.random.rand(array_size)
 
 # Definimos una función para calcular la suma de los elementos del array
@@ -133,7 +133,7 @@ else:
 # Comprobamos calculo con CPU y GPU con tensores
 
 # Generamos un tensor aleatorio de tamaño muy grande
-array_size = 1000
+array_size = 100
 array_1 = np.random.rand(array_size, array_size, array_size)
 # Imprimimos el tamaño de el shape del array
 print(array_1.shape)
@@ -145,7 +145,7 @@ print(tsr_1.shape)
 print()
 
 # Generamos otro tensor aleatorio de tamaño muy grande
-array_size = 1000
+array_size = 100
 array_2 = np.random.rand(array_size, array_size, array_size)
 # Imprimimos el tamaño de el shape del array
 print(array_2.shape)
@@ -163,38 +163,9 @@ is_tsr_2_a_tensor = (isinstance(tsr_2, torch.Tensor))
 print("tsr_2 is a tensor: ", is_tsr_2_a_tensor)
 
 # Definimos una función para calcular el producto punto de los tensores
-
 def dot_product(tensor1, tensor2):
     result = torch.dot(tensor1.flatten(), tensor2.flatten())
     return (result)
-
-# Comprobamos calculo con CPU y GPU con tensores
-
-# Generamos un tensor aleatorio de tamaño muy grande
-array_size = 1000
-array_1 = np.random.rand(array_size, array_size, array_size)
-# Imprimimos el tamaño de el shape del array
-print(array_1.shape)
-print()
-# Convertimos el array a tensor con torch
-tsr_1 = torch.tensor(array_1, dtype=torch.float32)
-
-
-# Generamos otro tensor aleatorio de tamaño muy grande
-array_size = 1000
-array_2 = np.random.rand(array_size, array_size, array_size)
-# Imprimimos el tamaño de el shape del array
-print(array_2.shape)
-print()
-# Convertimos el array a tensor con torch
-tsr_2 = torch.tensor(array_2, dtype=torch.float32)
-
-
-# Comprobamos que ambos son tensores
-is_tsr_1_a_tensor = (isinstance(tsr_1, torch.Tensor))
-print("tsr_1 is a tensor: ", is_tsr_1_a_tensor)
-is_tsr_2_a_tensor = (isinstance(tsr_2, torch.Tensor))
-print("tsr_2 is a tensor: ", is_tsr_2_a_tensor)
 
 # Medimos el tiempo de ejecución en CPU
 start_time = time.time()
@@ -221,39 +192,12 @@ if time_gpu > 0:
     print(f"Ratio de velocidad GPU/CPU: {ratio:.4f}")
 else:
     print("No se puede calcular el ratio de velocidad, el tiempo de GPU es 0.")
+print()
 
 # Definimos una función para calcular el producto bbm de los tensores
-
 def tsr_product_tensors(tensor1, tensor2):
     result = torch.bmm(tensor1, tensor2)
     return (result)
-
-# Comprobamos calculo con CPU y GPU con tensores
-
-# Generamos un tensor aleatorio de tamaño muy grande
-array_size = 1000
-array_1 = np.random.rand(array_size, array_size, array_size)
-# Imprimimos el tamaño de el shape del array
-print(array_1.shape)
-print()
-# Convertimos el array a tensor con torch
-tsr_1 = torch.tensor(array_1, dtype=torch.float32)
-
-
-# Generamos otro tensor aleatorio de tamaño muy grande
-array_size = 1000
-array_2 = np.random.rand(array_size, array_size, array_size)
-# Imprimimos el tamaño de el shape del array
-print(array_2.shape)
-print()
-# Convertimos el array a tensor con torch
-tsr_2 = torch.tensor(array_2, dtype=torch.float32)
-
-# Comprobamos que ambos son tensores
-is_tsr_1_a_tensor = (isinstance(tsr_1, torch.Tensor))
-print("tsr_1 is a tensor: ", is_tsr_1_a_tensor)
-is_tsr_2_a_tensor = (isinstance(tsr_2, torch.Tensor))
-print("tsr_2 is a tensor: ", is_tsr_2_a_tensor)
 
 # Medimos el tiempo de ejecución en CPU
 start_time = time.time()
@@ -279,39 +223,12 @@ if time_gpu > 0:
     print(f"Ratio de velocidad GPU/CPU: {ratio:.4f}")
 else:
     print("No se puede calcular el ratio de velocidad, el tiempo de GPU es 0.")
+print()
 
 # Definimos una función para calcular el producto @ de los tensores
-
 def tsr_product_tensors(tensor1, tensor2):
     result = tensor1@tensor2
     return (result)
-
-# Comprobamos calculo con CPU y GPU con tensores
-
-# Generamos un tensor aleatorio de tamaño muy grande
-array_size = 1000
-array_1 = np.random.rand(array_size, array_size, array_size)
-# Imprimimos el tamaño de el shape del array
-print(array_1.shape)
-print()
-# Convertimos el array a tensor con torch
-tsr_1 = torch.tensor(array_1, dtype=torch.float32)
-
-
-# Generamos otro tensor aleatorio de tamaño muy grande
-array_size = 1000
-array_2 = np.random.rand(array_size, array_size, array_size)
-# Imprimimos el tamaño de el shape del array
-print(array_2.shape)
-print()
-# Convertimos el array a tensor con torch
-tsr_2 = torch.tensor(array_2, dtype=torch.float32)
-
-# Comprobamos que ambos son tensores
-is_tsr_1_a_tensor = (isinstance(tsr_1, torch.Tensor))
-print("tsr_1 is a tensor: ", is_tsr_1_a_tensor)
-is_tsr_2_a_tensor = (isinstance(tsr_2, torch.Tensor))
-print("tsr_2 is a tensor: ", is_tsr_2_a_tensor)
 
 # Medimos el tiempo de ejecución en CPU
 start_time = time.time()
@@ -337,38 +254,12 @@ if time_gpu > 0:
     print(f"Ratio de velocidad GPU/CPU: {ratio:.4f}")
 else:
     print("No se puede calcular el ratio de velocidad, el tiempo de GPU es 0.")
+print()
 
 # Definimos una función para calcular el producto matmult de los dos tensores
-
 def tsr_product(tensor1, tensor2):
     result = torch.matmul(tensor1, tensor2)
     return (result)
-
-# Comprobamos calculo con CPU y GPU con tensores
-
-# Generamos un tensor aleatorio de tamaño muy grande
-array_size = 1000
-array_1 = np.random.rand(array_size, array_size, array_size)
-# Imprimimos el tamaño de el shape del array
-print(array_1.shape)
-print()
-# Convertimos el array a tensor con torch
-tsr_1 = torch.tensor(array_1, dtype=torch.float32)
-
-# Generamos otro tensor aleatorio de tamaño muy grande
-array_size = 1000
-array_2 = np.random.rand(array_size, array_size, array_size)
-# Imprimimos el tamaño de el shape del array
-print(array_2.shape)
-print()
-# Convertimos el array a tensor con torch
-tsr_2 = torch.tensor(array_2, dtype=torch.float32)
-
-# Comprobamos que ambos son tensores
-is_tsr_1_a_tensor = (isinstance(tsr_1, torch.Tensor))
-print("tsr_1 is a tensor: ", is_tsr_1_a_tensor)
-is_tsr_2_a_tensor = (isinstance(tsr_2, torch.Tensor))
-print("tsr_2 is a tensor: ", is_tsr_2_a_tensor)
 
 # Medimos el tiempo de ejecución en CPU
 start_time = time.time()
@@ -394,4 +285,4 @@ if time_gpu > 0:
     print(f"Ratio de velocidad GPU/CPU: {ratio:.4f}")
 else:
     print("No se puede calcular el ratio de velocidad, el tiempo de GPU es 0.")
-
+print()
